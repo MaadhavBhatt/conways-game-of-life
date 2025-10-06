@@ -1,0 +1,24 @@
+.link {
+  margin: 1rem 0;
+  padding: 2rem;
+
+  font-size: 2rem;
+  text-align: center;
+  text-decoration: none;
+
+  color: var(--clr-black-1);
+  background-color: var(--clr-white-2);
+  box-shadow: 0.5rem 0.5rem var(--clr-black-2);
+
+  min-width: 10rem;
+  width: fit-content;
+
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background-color: var(--clr-white-1);
+    box-shadow: 0.7rem 0.7rem var(--clr-black-2);
+    transform: translate(-0.2rem, -0.2rem);
+  }
+}
