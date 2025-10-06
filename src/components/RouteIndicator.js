@@ -19,7 +19,7 @@ export default function RouteIndicator() {
 
   return (
     <div style={indicatorStyle}>
-      Path: <span>{location.pathname}</span>
+      <code>Path: {location.pathname}</code>
     </div>
   );
 }
