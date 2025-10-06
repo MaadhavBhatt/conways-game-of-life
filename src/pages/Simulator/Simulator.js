@@ -1,7 +1,7 @@
 export default function Simulator() {
   return (
-    <div className="container">
-      <h1>Simulator Page</h1>
-    </div>
+    <section className="container">
+      <h2>Simulator Page</h2>
+    </section>
   );
 }

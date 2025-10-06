@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
-    <div className="app">
+    <div>
       <section className="hero">
         <h1 className="hero-heading">Conway's Game of Life</h1>
         <p>
