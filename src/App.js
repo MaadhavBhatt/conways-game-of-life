@@ -1,4 +1,4 @@
-import './App.css';
+import './styles/App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import Simulator from './pages/Simulator/Simulator';
