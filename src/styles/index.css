@@ -47,6 +47,7 @@ section {
 
 h1 {
   font-size: 4rem;
+  text-transform: uppercase;
 }
 
 h2 {
@@ -71,6 +72,10 @@ a {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+  all: unset;
 }
 
 .text-center {

@@ -13,12 +13,16 @@ export default function Home() {
         </p>
 
         <div className="flex gap-2 center">
-          <Link className="block link" to="/simulator">
-            Simulator
-          </Link>
-          <Link className="block link" to="/about">
-            About
-          </Link>
+          <button>
+            <Link className="block link" to="/simulator">
+              Simulator
+            </Link>
+          </button>
+          <button>
+            <Link className="block link" to="/about">
+              About
+            </Link>
+          </button>
         </div>
       </section>
     </div>
