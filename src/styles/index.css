@@ -95,6 +95,15 @@ button {
   text-transform: uppercase;
 }
 
+.text {
+  width: fit-content;
+  margin: 0 auto;
+
+  & > * {
+    margin: 0 auto;
+  }
+}
+
 .text-center {
   text-align: center;
 }

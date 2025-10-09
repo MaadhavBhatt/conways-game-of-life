@@ -5,11 +5,13 @@ import '../styles/Home.css';
 export default function Home() {
   return (
     <section className="hero container">
-      <h1 className="text-center">Conway's Game of Life</h1>
-      <p className="text-center">
-        A cellular automaton devised by the British mathematician John Horton
-        Conway in 1970.
-      </p>
+      <div className="text">
+        <h1 className="text-center">Conway's Game of Life</h1>
+        <p className="text-center">
+          A cellular automaton devised by the British mathematician John Horton
+          Conway in 1970.
+        </p>
+      </div>
 
       <div className="buttons">
         <button type="button">
