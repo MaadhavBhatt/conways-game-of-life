@@ -4,27 +4,25 @@ import '../styles/Home.css';
 
 export default function Home() {
   return (
-    <div>
-      <section className="container flex-col center gap-2">
-        <h1 className="text-center">Conway's Game of Life</h1>
-        <p className="text-center">
-          A cellular automaton devised by the British mathematician John Horton
-          Conway in 1970.
-        </p>
+    <section className="container flex-col center gap-2">
+      <h1 className="text-center">Conway's Game of Life</h1>
+      <p className="text-center">
+        A cellular automaton devised by the British mathematician John Horton
+        Conway in 1970.
+      </p>
 
-        <div className="flex gap-2 center">
-          <button>
-            <Link className="block link" to="/simulator">
-              Simulator
-            </Link>
-          </button>
-          <button>
-            <Link className="block link" to="/about">
-              About
-            </Link>
-          </button>
-        </div>
-      </section>
-    </div>
+      <div className="flex gap-2 center">
+        <button>
+          <Link className="block link" to="/simulator">
+            Simulator
+          </Link>
+        </button>
+        <button>
+          <Link className="block link" to="/about">
+            About
+          </Link>
+        </button>
+      </div>
+    </section>
   );
 }
