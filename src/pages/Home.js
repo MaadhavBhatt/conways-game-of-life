@@ -4,20 +4,20 @@ import '../styles/Home.css';
 
 export default function Home() {
   return (
-    <section className="container flex-col center gap-2">
+    <section className="hero container">
       <h1 className="text-center">Conway's Game of Life</h1>
       <p className="text-center">
         A cellular automaton devised by the British mathematician John Horton
         Conway in 1970.
       </p>
 
-      <div className="flex gap-2 center">
-        <button>
+      <div className="buttons">
+        <button type="button">
           <Link className="block link" to="/simulator">
             Simulator
           </Link>
         </button>
-        <button>
+        <button type="button">
           <Link className="block link" to="/about">
             About
           </Link>

@@ -16,6 +16,17 @@
   --clr-white-1: #f5f5f5;
   --clr-white-2: #e0e0e0;
 
+  --fz-h1: clamp(3rem, 5vw, 5rem);
+  --fz-h2: clamp(2.5rem, 4vw, 3.5rem);
+  --fz-h3: clamp(2rem, 3vw, 2.5rem);
+  --fz-p: clamp(1.5rem, 2vw, 1.8rem);
+  --fz-a: var(--fz-p);
+
+  --btn-link-padding-y: 1rem;
+  --btn-link-padding-x: clamp(1rem, 2vw, 1.5rem);
+
+  --gap: clamp(1.5rem, 2vw, 2rem);
+
   font-size: 10px;
   line-height: 1.6;
 }
@@ -51,25 +62,25 @@ section {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: var(--fz-h1);
   text-transform: uppercase;
 }
 
 h2 {
-  font-size: 3rem;
+  font-size: var(--fz-h2);
 }
 
 h3 {
-  font-size: 2.5rem;
+  font-size: var(--fz-h3);
 }
 
 p {
-  font-size: 1.8rem;
-  max-width: 60ch;
+  font-size: var(--fz-p);
+  max-width: 40ch;
 }
 
 a {
-  font-size: 1.8rem;
+  font-size: var(--fz-a);
   text-decoration: underline;
   color: inherit;
 }
@@ -90,23 +101,4 @@ button {
 
 .block {
   display: block;
-}
-
-/* Flexbox Utilities */
-.flex {
-  display: flex;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
-.center {
-  justify-content: center;
-  align-items: center;
-}
-
-.gap-2 {
-  gap: 2rem;
 }
