@@ -1,5 +1,6 @@
 import React from 'react';
 import Cell from './Cell';
+import '../styles/GameGrid.css';
 
 export default function GameGrid({ grid, onCellClick }) {
   return (
