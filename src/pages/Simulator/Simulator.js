@@ -1,14 +1,13 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import GameGrid from '../../components/GameGrid';
+import Game from '../../utils/gameOfLife';
 
-const ROWS = 10;
-const COLS = 10;
+const ROWS = 30;
+const COLS = 30;
 
 function createEmptyGrid() {
-  return Array.from({ length: ROWS }, () =>
-    Array.from({ length: COLS }, () => false)
-  );
+  const gameState = new Game(ROWS, COLS);
+  return gameState.createEmptyGrid();
 }
 
 export default function Simulator() {
@@ -24,11 +23,5 @@ export default function Simulator() {
     );
   };
 
-  return (
-    <section className="container">
-      <h2>Simulator</h2>
-      <Link to="/">Go to Home</Link>
-      <GameGrid grid={grid} onCellClick={handleCellClick} />
-    </section>
-  );
+  return <GameGrid grid={grid} onCellClick={handleCellClick} />;
 }
