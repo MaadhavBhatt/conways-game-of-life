@@ -1,27 +1,32 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import GameGrid from '../../components/GameGrid';
 import Game from '../../utils/gameOfLife';
 
 const ROWS = 30;
 const COLS = 30;
 
-function createEmptyGrid() {
-  const gameState = new Game(ROWS, COLS);
-  return gameState.createEmptyGrid();
-}
-
 export default function Simulator() {
-  const [grid, setGrid] = useState(createEmptyGrid());
+  const [gameState, setGameState] = useState(new Game(ROWS, COLS));
 
   const handleCellClick = (row, col) => {
-    setGrid((prevGrid) =>
-      prevGrid.map((r, rowIdx) =>
-        r.map((cell, colIdx) =>
-          rowIdx === row && colIdx === col ? !cell : cell
-        )
-      )
-    );
+    gameState.toggleCell(row, col);
+    setGameState(new Game(ROWS, COLS, gameState.getGrid()));
   };
 
-  return <GameGrid grid={grid} onCellClick={handleCellClick} />;
+  const handleReset = () => {
+    gameState.reset();
+    setGameState(new Game(ROWS, COLS));
+  };
+
+  return (
+    <>
+      <GameGrid grid={gameState.getGrid()} onCellClick={handleCellClick} />
+
+      <button onClick={handleReset}>Reset</button>
+      <button>
+        <Link to="/">Back to Home</Link>
+      </button>
+    </>
+  );
 }

@@ -1,10 +1,10 @@
 class GameState {
   #grid; // Private field for the grid
 
-  constructor(rows, cols) {
+  constructor(rows, cols, initialGrid = null) {
     this.rows = rows;
     this.cols = cols;
-    this.#grid = this.createEmptyGrid();
+    this.#grid = initialGrid || this.createEmptyGrid();
     this.generation = 0;
     this.liveCount = this.#grid.flat().filter((cell) => cell).length;
     this.locked = false;
@@ -20,6 +20,10 @@ class GameState {
     return Array.from({ length: this.rows }, () =>
       Array.from({ length: this.cols }, () => false)
     );
+  }
+
+  getGrid() {
+    return this.#grid;
   }
 
   toggleCell(row, col) {
