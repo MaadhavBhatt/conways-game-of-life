@@ -75,6 +75,11 @@ class GameState {
     this.generation += 1;
     this.updateLiveCount();
   }
+
+  evolve() {
+    this.locked = true; // Lock the grid during evolution
+    this.generateNextState();
+  }
 }
 
 export default GameState;

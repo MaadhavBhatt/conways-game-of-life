@@ -19,11 +19,17 @@ export default function Simulator() {
     setGameState(new Game(ROWS, COLS));
   };
 
+  const handleEvolve = () => {
+    gameState.evolve();
+    setGameState(new Game(ROWS, COLS, gameState.getGrid()));
+  };
+
   return (
     <>
       <GameGrid grid={gameState.getGrid()} onCellClick={handleCellClick} />
 
       <button onClick={handleReset}>Reset</button>
+      <button onClick={handleEvolve}>Evolve</button>
       <button>
         <Link to="/">Back to Home</Link>
       </button>
