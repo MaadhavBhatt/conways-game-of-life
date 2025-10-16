@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Cell({ alive, onClick }) {
   const style = {
     width: '2rem',
