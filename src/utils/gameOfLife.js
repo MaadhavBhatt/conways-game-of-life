@@ -5,6 +5,13 @@ class GameState {
     this.grid = this.createEmptyGrid();
     this.generation = 0;
     this.liveCount = this.grid.flat().filter((cell) => cell).length;
+    this.locked = false;
+  }
+
+  reset() {
+    this.grid = this.createEmptyGrid();
+    this.generation = 0;
+    this.locked = false;
   }
 
   createEmptyGrid() {
@@ -14,10 +21,15 @@ class GameState {
   }
 
   toggleCell(row, col) {
-    if (!row >= 0 || row >= this.rows || !col >= 0 || col >= this.cols) {
+    if (this.locked) return; // Prevent toggling if locked
+    if (!(row >= 0 && row < this.rows) || !(col >= 0 && col < this.cols)) {
       throw new Error('Cell position out of bounds');
     }
     this.grid[row][col] = !this.grid[row][col];
+  }
+
+  updateLiveCount() {
+    this.liveCount = this.grid.flat().filter((cell) => cell).length;
   }
 
   countLiveNeighbors(row, col) {
@@ -55,6 +67,7 @@ class GameState {
     }
     this.grid = nextGrid;
     this.generation += 1;
+    this.updateLiveCount();
   }
 }
 
