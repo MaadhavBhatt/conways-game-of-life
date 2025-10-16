@@ -1,15 +1,17 @@
 class GameState {
+  #grid; // Private field for the grid
+
   constructor(rows, cols) {
     this.rows = rows;
     this.cols = cols;
-    this.grid = this.createEmptyGrid();
+    this.#grid = this.createEmptyGrid();
     this.generation = 0;
-    this.liveCount = this.grid.flat().filter((cell) => cell).length;
+    this.liveCount = this.#grid.flat().filter((cell) => cell).length;
     this.locked = false;
   }
 
   reset() {
-    this.grid = this.createEmptyGrid();
+    this.#grid = this.createEmptyGrid();
     this.generation = 0;
     this.locked = false;
   }
@@ -25,11 +27,11 @@ class GameState {
     if (!(row >= 0 && row < this.rows) || !(col >= 0 && col < this.cols)) {
       throw new Error('Cell position out of bounds');
     }
-    this.grid[row][col] = !this.grid[row][col];
+    this.#grid[row][col] = !this.#grid[row][col];
   }
 
   updateLiveCount() {
-    this.liveCount = this.grid.flat().filter((cell) => cell).length;
+    this.liveCount = this.#grid.flat().filter((cell) => cell).length;
   }
 
   countLiveNeighbors(row, col) {
@@ -45,7 +47,7 @@ class GameState {
           newCol >= 0 &&
           newCol < this.cols
         ) {
-          liveNeighbors += this.grid[newRow][newCol] ? 1 : 0;
+          liveNeighbors += this.#grid[newRow][newCol] ? 1 : 0;
         }
       }
     }
@@ -58,14 +60,14 @@ class GameState {
     for (let row = 0; row < this.rows; row++) {
       for (let col = 0; col < this.cols; col++) {
         const liveNeighbors = this.countLiveNeighbors(row, col);
-        if (this.grid[row][col]) {
+        if (this.#grid[row][col]) {
           nextGrid[row][col] = liveNeighbors === 2 || liveNeighbors === 3;
         } else {
           nextGrid[row][col] = liveNeighbors === 3;
         }
       }
     }
-    this.grid = nextGrid;
+    this.#grid = nextGrid;
     this.generation += 1;
     this.updateLiveCount();
   }
