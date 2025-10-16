@@ -16,6 +16,9 @@
   --clr-white-1: #f5f5f5;
   --clr-white-2: #e0e0e0;
 
+  --clr-inactive: var(--clr-black-2);
+  --clr-active: var(--clr-white-1);
+
   --fz-h1: clamp(3rem, 5vw, 5rem);
   --fz-h2: clamp(2.5rem, 4vw, 3.5rem);
   --fz-h3: clamp(2rem, 3vw, 2.5rem);
